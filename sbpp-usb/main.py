@@ -12,7 +12,7 @@ def main(arrive_rate):
     ave_block_rate = 0
     ave_spec_utilization = 0
     ave_fragmentation_rate = 0
-    times = 10
+    times = 5
     for i in range(times):
         print "1: create graph"
         # graph = get_graph_test()
