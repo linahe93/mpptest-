@@ -129,13 +129,14 @@ def get_metric(path, graph):
     hops = len(path)
     # print("hops %s" %hops)
     free_spectrum = 0
+    m = get_modulation(path, graph)
     path_slots_list = get_spectrum_slots_list(path, graph)
     for slots_of_edge in path_slots_list:
 
         free_spectrum += len(slots_of_edge) - sum([1 for _ in slots_of_edge if _ != 0])
 
     if free_spectrum is not None:
-        return (free_spectrum /(hops - 1))
+        return (free_spectrum *m /(hops - 1))
     else:
         print "No free spectrum"
 
